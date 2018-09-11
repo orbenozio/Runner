@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\orb\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_Runner.1893271994.00" t="ExcludeRecursive" />
+    <e p="D:\Projects\Unity Projects\Tutorials\CatLikeCoding\2.11 Older Tutorials\Runner\Runner" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="GameEventManager.cs" t="Include" />
+          <e p="MenuManager.cs" t="Include" />
+          <e p="PlatformManager.cs" t="Include" />
+          <e p="Runner.cs" t="Include" />
+          <e p="SkylineManager.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Runner.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
