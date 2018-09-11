@@ -6,7 +6,6 @@ public class MenuManager : MonoBehaviour
 {
 	private const string ANIMATOR_TRIGGER_START_GAME = "StartGame";
 	private const string ANIMATOR_TRIGGER_GAME_OVER = "GameOver";
-	private const string ANIMATOR_TRIGGER_IDLE = "Idle";
 	private const string ANIMATOR_TRIGGER_EXIT = "Exit";
 	
 	[SerializeField] private Animator _animator;

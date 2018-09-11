@@ -6,8 +6,11 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Booster.cs" t="Include" />
           <e p="GameEventManager.cs" t="Include" />
+          <e p="HUBManager.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
+          <e p="ParticleSystemManager.cs" t="Include" />
           <e p="PlatformManager.cs" t="Include" />
           <e p="Runner.cs" t="Include" />
           <e p="SkylineManager.cs" t="Include" />

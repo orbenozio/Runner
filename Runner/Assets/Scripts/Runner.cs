@@ -5,9 +5,11 @@ using UnityEngine;
 public class Runner : MonoBehaviour 
 {
 	public static float DistanceTraveled;
-
+	private static int Boosts;
+	
 	[SerializeField] private float _acceleration;
 	[SerializeField] private Vector3 _jumpVelocity;
+	[SerializeField] private Vector3 _boostVelocity;
 	[SerializeField] private float _gameOverY;
 
 	private bool _touchingPlatform;
@@ -31,13 +33,23 @@ public class Runner : MonoBehaviour
 
 	private void Update () 
 	{
-		if (_touchingPlatform && Input.GetButtonDown("Jump"))
+		if (Input.GetButtonDown("Jump"))
 		{
-			_rigidbody.AddForce(_jumpVelocity, ForceMode.VelocityChange);
-			_touchingPlatform = false;
+			if (_touchingPlatform)
+			{
+				_rigidbody.AddForce(_jumpVelocity, ForceMode.VelocityChange);
+				_touchingPlatform = false;
+			}
+			else if (Boosts > 0)
+			{
+				_rigidbody.AddForce(_boostVelocity, ForceMode.VelocityChange);
+				Boosts--;
+				HUBManager.SetBoosts(Boosts);
+			}
 		}
 		
 		DistanceTraveled = transform.localPosition.x;
+		HUBManager.SetDistance(DistanceTraveled);
 		
 		if (transform.localPosition.y < _gameOverY)
 		{
@@ -65,7 +77,10 @@ public class Runner : MonoBehaviour
 	
 	private void OnGameStart()
 	{
+		Boosts = 0;
+		HUBManager.SetBoosts(Boosts);
 		DistanceTraveled = 0f;
+		HUBManager.SetDistance(DistanceTraveled);
 		transform.localPosition = _startPosition;
 		_renderer.enabled = true;
 		_rigidbody.isKinematic = false;
@@ -77,5 +92,11 @@ public class Runner : MonoBehaviour
 		_renderer.enabled = false;
 		_rigidbody.isKinematic = true;
 		enabled = false;
+	}
+
+	public static void AddBoost()
+	{
+		Boosts++;
+		HUBManager.SetBoosts(Boosts);
 	}
 }

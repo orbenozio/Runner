@@ -17,6 +17,8 @@ public class PlatformManager : MonoBehaviour
 
 	[SerializeField] private Material[] _materials;
 	[SerializeField] private PhysicMaterial[] _physicMaterials;
+
+	[SerializeField] private Booster _booster;
 	
 	
 	private Vector3 _nextPosition;
@@ -66,6 +68,8 @@ public class PlatformManager : MonoBehaviour
 		var position = _nextPosition;
 		position.x += scale.x * 0.5f;
 		position.y += scale.y * 0.5f;
+		
+		_booster.SpawnIfAvailable(position);
 		
 		var t = _objectQueue.Dequeue();
 		t.localScale = scale;
