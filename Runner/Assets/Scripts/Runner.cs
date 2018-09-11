@@ -50,6 +50,7 @@ public class Runner : MonoBehaviour
 		
 		DistanceTraveled = transform.localPosition.x;
 		HUBManager.SetDistance(DistanceTraveled);
+		HUBManager.SetVelocity(_rigidbody.velocity.x);
 		
 		if (transform.localPosition.y < _gameOverY)
 		{
@@ -81,6 +82,7 @@ public class Runner : MonoBehaviour
 		HUBManager.SetBoosts(Boosts);
 		DistanceTraveled = 0f;
 		HUBManager.SetDistance(DistanceTraveled);
+		HUBManager.SetVelocity(_rigidbody.velocity.x);
 		transform.localPosition = _startPosition;
 		_renderer.enabled = true;
 		_rigidbody.isKinematic = false;

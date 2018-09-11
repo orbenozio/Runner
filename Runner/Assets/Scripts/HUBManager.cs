@@ -9,6 +9,7 @@ public class HUBManager : MonoBehaviour
     
     [SerializeField] private Text _boosts;
     [SerializeField] private Text _distance;
+    [SerializeField] private Text _velocity;
 
     private void Start()
     {
@@ -23,5 +24,10 @@ public class HUBManager : MonoBehaviour
     public static void SetDistance(float distance)
     {
         _instance._distance.text = distance.ToString("f0");
+    }
+    
+    public static void SetVelocity(float velocity)
+    {
+        _instance._velocity.text = velocity.ToString("f0");
     }
 }
